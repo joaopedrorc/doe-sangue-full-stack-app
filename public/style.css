@@ -1,0 +1,201 @@
+/* GLOBAIS */
+
+* {
+    /* Corrigindo comportamento padrão do  */
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+
+    /*FONTE */
+    font-family: 'Roboto', sans-serif;
+
+    /* COLOR */
+    background-color: #f9f9f9;
+}
+
+h1 h2 {
+    color: #000000;
+}
+
+
+
+/* TÍTULOS */
+
+header h1, main h2 {
+    margin-bottom: 70px;
+}
+
+main h2 span {
+    color: #fe3c3c; 
+}
+
+.form h2 {
+    text-align: right;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*      ALINHAMENTOS, ESPAÇAMENTOS,
+        ALTURAS E LARGURAS 
+*/
+
+/*          ESTRUTURA
+ */
+
+/* section.donors(maior priorodade) e .donors tem o msm efeito.  */
+/* Cascata no CSS, so pega as propriedades do "donors" dentro do main */
+
+header, main, footer {
+    text-align: center;
+}
+
+
+header, .form, main {
+    /* espaçamentos com margin */
+    margin: 0 auto 70px auto;
+
+    /* limites dos elementos na página */
+    width: 90%;
+    max-width: 500px;
+
+}
+
+/* HEADER */
+
+header button {
+    margin-top: 16px;
+    padding: 16px 24px;
+    border-radius: 5px;
+
+    background-color:  #fe3c3c;
+    color: #ffffff;
+    border: none;
+
+    font-weight: bolder;
+}
+
+.logo {
+    width: 150px;
+    margin: 70px 0px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+/* FORM */
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px;
+    align-items: center;
+
+    background-color: #fe3c3c;
+
+
+    padding: 16px 64px;
+
+    border-radius: 5px;
+}
+
+form input,
+form button {
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    /* Preenchimento */
+    padding: 8px 16px;
+
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+
+}
+
+form input {
+    background-color: transparent;
+}
+
+/* pseudo-element */
+form input::placeholder {
+    color: #ffffff;
+}
+
+form button {
+    font-weight: bolder;
+}
+
+/* MAIN */
+
+main .donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.blood {
+    color: #fe3c3c;
+    font-weight: bolder;
+    font-size: 15px;
+
+    display: flex;
+    /* eixo x */
+    align-items: center;
+    /* eixo y */
+    justify-content: center;
+
+    position: relative;
+
+}
+
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+
+    width: 40px;
+    height: 40px;
+
+    /* Nova camada de configuração */
+    position: absolute;
+
+    /* fazer a gotinha */
+    border-radius: 50%;
+    border-top-right-radius: 0;
+
+    transform: rotate(-45deg);
+}
+
+.donor p {
+    margin-top: 25px;
+    margin-bottom: 64px;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top: auto;
+    padding: 16px;
+    border: 1px solid #eee;
+}
+
+/* Funcionalidades com Js */
+
+section.form {
+    transition: 500ms;
+}
+
+section.form.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -70px;
+}
